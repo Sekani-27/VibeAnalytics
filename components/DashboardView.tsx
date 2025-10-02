@@ -6,7 +6,7 @@ import ConfidenceBarChart from './ConfidenceBarChart';
 import RadarChartSummary from './RadarChartSummary';
 import ResultsTable from './ResultsTable';
 import FlippingCards from './FlippingCards';
-import { FilterX } from 'lucide-react';
+import { ListFilter as FilterX } from 'lucide-react';
 
 interface DashboardViewProps {
     data: DashboardData;
