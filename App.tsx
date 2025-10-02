@@ -3,7 +3,7 @@ import { AnalysisResult, Sentiment } from './types';
 import { analyzeSentences } from './services/geminiService';
 import AnalyzerView from './components/AnalyzerView';
 import DashboardView from './components/DashboardView';
-import { BrainCircuit, Sparkles, AlertTriangle } from 'lucide-react';
+import { BrainCircuit, Sparkles, TriangleAlert as AlertTriangle } from 'lucide-react';
 
 function App() {
     const [results, setResults] = useState<AnalysisResult[]>([]);
