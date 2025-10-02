@@ -5,6 +5,7 @@ import SentimentDonutChart from './SentimentDonutChart';
 import ConfidenceBarChart from './ConfidenceBarChart';
 import RadarChartSummary from './RadarChartSummary';
 import ResultsTable from './ResultsTable';
+import FlippingCards from './FlippingCards';
 import { FilterX } from 'lucide-react';
 
 interface DashboardViewProps {
@@ -61,8 +62,15 @@ const DashboardView: React.FC<DashboardViewProps> = ({ data, results, filteredRe
             </div>
             
             <div className="lg:col-span-4">
-                <RadarChartSummary 
+                <RadarChartSummary
                     data={data}
+                    isGlassmorphismEnabled={isGlassmorphismEnabled}
+                />
+            </div>
+
+            <div className="lg:col-span-4">
+                <FlippingCards
+                    results={filteredResults}
                     isGlassmorphismEnabled={isGlassmorphismEnabled}
                 />
             </div>
@@ -70,7 +78,7 @@ const DashboardView: React.FC<DashboardViewProps> = ({ data, results, filteredRe
             <div className="lg:col-span-4">
                 {filterSentiment && (
                     <div className="flex justify-end mb-4">
-                        <button 
+                        <button
                             onClick={() => onFilterChange(null)}
                             className="flex items-center text-sm bg-purple-600/50 text-purple-200 hover:bg-purple-500/50 border border-purple-500/80 px-3 py-2 rounded-lg transition-all duration-200 transform hover:scale-105"
                         >
