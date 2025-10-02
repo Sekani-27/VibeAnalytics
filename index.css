@@ -8,6 +8,7 @@ html,
 body {
   background-color: #0f172a;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 body {
@@ -17,4 +18,26 @@ body {
 #root {
   min-height: 100vh;
   background-color: #0f172a;
+}
+
+.recharts-surface {
+  overflow: visible;
+}
+
+.recharts-wrapper {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.3s ease-in-out;
 }

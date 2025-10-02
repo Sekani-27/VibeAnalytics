@@ -150,43 +150,10 @@ function App() {
     return (
         <div className="min-h-screen bg-slate-900 text-gray-200 font-sans p-4 sm:p-6 lg:p-8">
             <style>{`
-                @property --aurora-angle {
-                    syntax: '<angle>';
-                    initial-value: 0deg;
-                    inherits: false;
-                }
-                @keyframes aurora {
-                    0% { --aurora-angle: 0deg; }
-                    100% { --aurora-angle: 360deg; }
-                }
                 .glass-panel {
                     background-color: rgba(255, 255, 255, 0.05);
                     backdrop-filter: blur(16px);
-                    border-color: rgba(255, 255, 255, 0.1);
-                }
-                .glass-panel::before {
-                    content: '';
-                    position: absolute;
-                    inset: -1px;
-                    border-radius: inherit;
-                    padding: 2px; /* Border thickness */
-                    background: conic-gradient(
-                        from var(--aurora-angle, 0deg),
-                        rgba(168, 85, 247, 0.4),  /* purple-500/40 */
-                        rgba(56, 189, 248, 0.4), /* cyan-400/40 */
-                        rgba(236, 72, 153, 0.4), /* pink-500/40 */
-                        rgba(168, 85, 247, 0.4)
-                    );
-                    -webkit-mask:
-                        linear-gradient(#fff 0 0) content-box,
-                        linear-gradient(#fff 0 0);
-                    mask:
-                        linear-gradient(#fff 0 0) content-box,
-                        linear-gradient(#fff 0 0);
-                    -webkit-mask-composite: xor;
-                    mask-composite: exclude;
-                    animation: aurora 4s linear infinite;
-                    pointer-events: none;
+                    border: 1px solid rgba(168, 85, 247, 0.3);
                 }
             `}</style>
             <div className="max-w-7xl mx-auto relative">

@@ -56,7 +56,8 @@ const SentimentDonutChart: React.FC<SentimentDonutChartProps> = ({ data, isGlass
                     height: 100%;
                     position: relative;
                     transform-style: preserve-3d;
-                    animation: spin-cube 12s infinite linear;
+                    animation: spin-cube 8s infinite ease-in-out;
+                    will-change: transform;
                 }
                 .face {
                     position: absolute;
@@ -82,8 +83,8 @@ const SentimentDonutChart: React.FC<SentimentDonutChartProps> = ({ data, isGlass
                 .bottom { transform: rotateX(-90deg) translateZ(50px); }
 
                 @keyframes spin-cube {
-                    from { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-                    to   { transform: rotateX(360deg) rotateY(720deg) rotateZ(360deg); }
+                    0% { transform: rotateX(0deg) rotateY(0deg); }
+                    100% { transform: rotateX(360deg) rotateY(360deg); }
                 }
             `}</style>
             <h3 className="text-lg font-semibold text-white mb-4">Sentiment Distribution</h3>

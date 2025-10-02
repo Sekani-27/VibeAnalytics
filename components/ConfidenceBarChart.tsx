@@ -32,11 +32,11 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 const ConfidenceBarChart: React.FC<ConfidenceBarChartProps> = ({ data, isGlassmorphismEnabled }) => {
     const containerClasses = `relative overflow-hidden border rounded-xl p-6 h-full flex flex-col min-h-[350px] transition-colors duration-300 ${isGlassmorphismEnabled ? 'glass-panel' : 'bg-slate-800 border-slate-700'}`;
 
-    const chartData = data.map((item, index) => ({
+    const chartData = React.useMemo(() => data.map((item, index) => ({
         ...item,
         name: `Text ${index + 1}`,
         confidence: item.confidence * 100,
-    }));
+    })), [data]);
         
     return (
         <div className={containerClasses}>

@@ -23,12 +23,12 @@ const CustomTooltip = ({ active, payload }: any) => {
 const RadarChartSummary: React.FC<RadarChartSummaryProps> = ({ data, isGlassmorphismEnabled }) => {
     const containerClasses = `relative overflow-hidden border rounded-xl p-6 h-full flex flex-col transition-colors duration-300 ${isGlassmorphismEnabled ? 'glass-panel' : 'bg-slate-800 border-slate-700'}`;
 
-    const chartData = [
+    const chartData = React.useMemo(() => [
         { subject: 'Positive', value: data.positivePercentage, fullMark: 100 },
         { subject: 'Negative', value: data.negativePercentage, fullMark: 100 },
         { subject: 'Neutral', value: data.neutralPercentage, fullMark: 100 },
         { subject: 'Avg Confidence', value: data.avgConfidence, fullMark: 100 },
-    ];
+    ], [data.positivePercentage, data.negativePercentage, data.neutralPercentage, data.avgConfidence]);
 
     return (
         <div className={containerClasses}>
