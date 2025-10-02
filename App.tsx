@@ -117,7 +117,7 @@ function App() {
 
     if (!isApiKeyConfigured) {
         return (
-            <div className="min-h-screen bg-black/10 backdrop-blur-xl text-gray-200 font-sans p-4 sm:p-6 lg:p-8 flex items-center justify-center">
+            <div className="min-h-screen bg-slate-900 text-gray-200 font-sans p-4 sm:p-6 lg:p-8 flex items-center justify-center">
                 <style>{`
                     .glass-panel-error {
                         background-color: rgba(239, 68, 68, 0.05);
@@ -148,7 +148,7 @@ function App() {
     }
 
     return (
-        <div className="min-h-screen bg-black/10 backdrop-blur-xl text-gray-200 font-sans p-4 sm:p-6 lg:p-8">
+        <div className="min-h-screen bg-slate-900 text-gray-200 font-sans p-4 sm:p-6 lg:p-8">
             <style>{`
                 @property --aurora-angle {
                     syntax: '<angle>';
